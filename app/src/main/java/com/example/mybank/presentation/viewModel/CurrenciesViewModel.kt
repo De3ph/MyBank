@@ -19,7 +19,7 @@ data class CurrenciesScreenUiState(
 
 class CurrenciesViewModel(
     ctx: Context,
-    private val ratesApiService: RatesApiService = RatesApiService
+    private val ratesApiService: RatesApiService
 ) : ViewModel() {
 
     private var _uiState = MutableStateFlow(CurrenciesScreenUiState())

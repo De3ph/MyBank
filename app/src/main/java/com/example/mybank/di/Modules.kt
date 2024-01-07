@@ -15,8 +15,8 @@ val AppModules = module {
 
     single { AccountRepository(get()) }
 
-    single { RatesApiService }
+    single { RatesApiService(androidContext().applicationContext) }
 
     viewModel { MainViewModel(get()) }
-    viewModel { CurrenciesViewModel(get()) }
+    viewModel { CurrenciesViewModel(get(),get()) }
 }
