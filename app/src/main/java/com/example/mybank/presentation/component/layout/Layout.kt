@@ -34,7 +34,7 @@ fun Layout(
                 .padding(it),
         ) {
             Column(
-                modifier = Modifier.fillMaxWidth().padding(Dimensions.Padding.sm)
+                modifier = Modifier.fillMaxWidth().padding(vertical = Dimensions.Padding.md, horizontal = Dimensions.Padding.sm)
             ) {
                 navGraph()
             }

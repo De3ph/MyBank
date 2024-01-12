@@ -8,7 +8,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.mybank.navigation.NavGraph
 import com.example.mybank.presentation.component.layout.Layout
 import com.example.mybank.presentation.viewModel.MainViewModel
-import com.example.mybank.ui.theme.MyBankTheme
+import com.example.mybank.ui.theme.AppTheme
 import org.koin.androidx.compose.koinViewModel
 
 class MainActivity : ComponentActivity() {
@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
             navController = rememberNavController()
             val mainViewModel = koinViewModel<MainViewModel>()
 
-            MyBankTheme {
+            AppTheme {
                 Layout(
                     navController = navController
                 ) {
