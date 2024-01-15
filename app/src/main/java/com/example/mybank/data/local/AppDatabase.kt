@@ -43,7 +43,7 @@ abstract class AppDatabase : RoomDatabase() {
             val DATABASE_NAME = "app-db"
             val db = Room.databaseBuilder(context, AppDatabase::class.java, DATABASE_NAME)
                 .allowMainThreadQueries()
-                .addCallback(object : RoomDatabase.Callback() {
+                .addCallback(object : Callback() {
                     override fun onCreate(db: SupportSQLiteDatabase) {
                         super.onCreate(db)
                     }

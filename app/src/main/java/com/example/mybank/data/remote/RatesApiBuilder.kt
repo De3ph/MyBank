@@ -22,6 +22,6 @@ class RatesApiBuilder(context: Context) {
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()
-            .create(RatesApi::class.java);
+            .create(RatesApi::class.java)
     }
 }
