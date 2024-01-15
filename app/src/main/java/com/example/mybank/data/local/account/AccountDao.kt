@@ -1,4 +1,4 @@
-package com.example.mybank.data.local
+package com.example.mybank.data.local.account
 
 import androidx.room.Dao
 import androidx.room.Delete

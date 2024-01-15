@@ -1,4 +1,4 @@
-package com.example.mybank.data.local
+package com.example.mybank.data.local.account
 
 class AccountRepository(private val accountDao: AccountDao) {
 

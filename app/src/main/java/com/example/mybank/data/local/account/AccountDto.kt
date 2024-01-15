@@ -1,4 +1,4 @@
-package com.example.mybank.data.local
+package com.example.mybank.data.local.account
 
 import com.example.mybank.constant.AvailableCurrencies
 import io.mcarle.konvert.api.KonvertTo

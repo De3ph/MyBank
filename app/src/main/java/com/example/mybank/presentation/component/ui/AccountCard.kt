@@ -29,7 +29,7 @@ fun AccountCard(
 
     ElevatedCard(
         modifier = Modifier.fillMaxWidth(0.9f),
-        shape = MaterialTheme.shapes.small
+        shape = MaterialTheme.shapes.small,
     ) {
         Column(
             modifier = Modifier
