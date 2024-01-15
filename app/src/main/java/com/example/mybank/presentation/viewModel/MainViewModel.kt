@@ -3,9 +3,9 @@ package com.example.mybank.presentation.viewModel
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.mybank.data.local.AccountDto
-import com.example.mybank.data.local.AccountRepository
-import com.example.mybank.data.local.toAccountDto
+import com.example.mybank.data.local.account.AccountDto
+import com.example.mybank.data.local.account.AccountRepository
+import com.example.mybank.data.local.account.toAccountDto
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update

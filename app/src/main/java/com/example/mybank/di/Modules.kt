@@ -1,7 +1,9 @@
 package com.example.mybank.di
 
-import com.example.mybank.data.local.AccountRepository
 import com.example.mybank.data.local.AppDatabase
+import com.example.mybank.data.local.account.AccountRepository
+import com.example.mybank.data.local.expense.ExpenseRepository
+import com.example.mybank.data.remote.RatesApiBuilder
 import com.example.mybank.data.remote.RatesApiService
 import com.example.mybank.presentation.viewModel.CurrenciesViewModel
 import com.example.mybank.presentation.viewModel.MainViewModel
@@ -14,8 +16,11 @@ val AppModules = module {
     single { AppDatabase.getInstance(androidContext()).accountDao() }
 
     single { AccountRepository(get()) }
+    single { ExpenseRepository(get()) }
 
-    single { RatesApiService(androidContext().applicationContext) }
+    single { RatesApiBuilder(androidContext().applicationContext) }
+
+    single { RatesApiService(get()) }
 
     viewModel { MainViewModel(get()) }
     viewModel { CurrenciesViewModel(get(),get()) }
