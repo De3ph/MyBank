@@ -18,7 +18,7 @@ fun MainScreen(
         Modifier.fillMaxWidth(),
         verticalArrangement = Arrangement.spacedBy(Dimensions.Spacing.lg)
     ) {
-        GreetingBar(name = "Hamit Can")
+        GreetingBar(name = "Hamit Can", navController)
         AccountCardPager()
     }
 }

@@ -5,11 +5,9 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
@@ -26,13 +24,19 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.mybank.R
+import com.example.mybank.navigation.Screens
 
 @Composable
-fun GreetingBar(name: String) {
+fun GreetingBar(name: String, navController: NavController) {
 
     val context = LocalContext.current
     val msg = Toast.makeText(context, "Ok", Toast.LENGTH_SHORT)
+
+    fun navigateToProfile() {
+        navController.navigate(Screens.ProfileScreen.route)
+    }
 
     Row(
         Modifier.fillMaxWidth(),
@@ -47,7 +51,7 @@ fun GreetingBar(name: String) {
         ) {
             Text(
                 text = "Tekrar hoşgeldin", style = MaterialTheme.typography.labelLarge.copy(
-                    color = Color.LightGray
+                    color = Color.Gray
                 )
             )
             Text(text = name, style = MaterialTheme.typography.labelLarge)
@@ -61,8 +65,7 @@ fun GreetingBar(name: String) {
                     OutlinedIconButton(
                         modifier = Modifier
                             .clip(CircleShape)
-                            .wrapContentSize()
-                        ,
+                            .wrapContentSize(),
                         border = BorderStroke(1.dp, Color.LightGray),
                         onClick = { msg.show() })
                     {
@@ -70,12 +73,13 @@ fun GreetingBar(name: String) {
                     }
                 }
                 Column {
-                    Box(
-                        Modifier
+                    OutlinedIconButton(
+                        modifier = Modifier
                             .clip(CircleShape)
-                            .width(35.dp)
-                            .wrapContentSize()
-                    ) {
+                            .wrapContentSize(),
+                        border = BorderStroke(1.dp, Color.LightGray),
+                        onClick = { navigateToProfile() })
+                    {
                         Image(
                             modifier = Modifier.background(color = Color.Black),
                             painter = painterResource(id = R.drawable.ic_launcher_foreground),
