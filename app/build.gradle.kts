@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
+    id("androidx.room")
 }
 
 android {
@@ -103,4 +104,7 @@ dependencies {
 }
 ksp{
     arg("konvert.konverter.generate-class", "true")
+}
+room {
+    schemaDirectory("$projectDir/schemas")
 }
