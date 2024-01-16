@@ -7,7 +7,7 @@ import androidx.room.Upsert
 
 @Dao
 interface ExpenseDao {
-    @Query("SELECT * FROM expenses WHERE accountId = :accountId ORDER BY title ASC")
+    @Query("SELECT * FROM expenses WHERE accountId = :accountId ORDER BY date DESC LIMIT 30")
     suspend fun getAllByAccountId(accountId: Int): List<Expense>
 
     @Upsert

@@ -23,7 +23,7 @@ import io.mcarle.konvert.api.Mapping
             source = "balance", target = "balance"
         ),
         Mapping(source = "currencyType", target = "currencyType"),
-        Mapping(source = "id", target = "", ignore = true)
+        Mapping(source = "id", target = "id")
     ]
 )
 class Account(

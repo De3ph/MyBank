@@ -8,7 +8,7 @@ import androidx.room.Upsert
 @Dao
 interface AccountDao {
 
-    @Query("SELECT * FROM accounts ORDER BY name ASC")
+    @Query("SELECT * FROM accounts")
     suspend fun getAccounts(): List<Account>
 
     @Upsert
