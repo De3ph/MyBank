@@ -10,6 +10,10 @@ class AccountRepository(private val accountDao: AccountDao) {
         return accountDao.insertOne(account)
     }
 
+    suspend fun upsertMany(vararg account: Account){
+        return accountDao.insertMany(*account)
+    }
+
     suspend fun deleteOne(accountName: String){
         val isExist = accountDao.isExist(accountName)
 

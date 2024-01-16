@@ -14,6 +14,9 @@ interface AccountDao {
     @Upsert
     suspend fun insertOne(account: Account)
 
+    @Upsert
+    suspend fun insertMany(vararg account: Account)
+
     @Delete
     suspend fun deleteOne(account: Account)
 
