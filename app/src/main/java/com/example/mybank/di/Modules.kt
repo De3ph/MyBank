@@ -11,17 +11,31 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
-val AppModules = module {
+val DatabaseModule = module {
+    single<AppDatabase> {
+        AppDatabase.getInstance(androidContext())
+    }
 
-    single { AppDatabase.getInstance(androidContext()).accountDao() }
+    single { get<AppDatabase>().accountDao() }
+    single { get<AppDatabase>().expenseDao() }
 
     single { AccountRepository(get()) }
     single { ExpenseRepository(get()) }
+}
+
+val ViewModelModule = module {
+    viewModel { CurrenciesViewModel(get(), get()) }
+    viewModel { MainViewModel(get(), get()) }
+}
+
+
+val AppModules = module {
+
+    includes(DatabaseModule, ViewModelModule)
 
     single { RatesApiBuilder(androidContext().applicationContext) }
 
     single { RatesApiService(get()) }
 
-    viewModel { MainViewModel(get()) }
-    viewModel { CurrenciesViewModel(get(),get()) }
 }
+
